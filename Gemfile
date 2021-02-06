@@ -57,3 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use figaro as the configuration management
 gem 'figaro'
+
+# Use haml as view engine
+gem 'haml'
+gem 'haml-rails'
