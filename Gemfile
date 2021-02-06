@@ -53,6 +53,9 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Use for emailing
+  gem 'letter_opener'
 end
 
 group :test do
@@ -72,3 +75,6 @@ gem 'figaro'
 # Use haml as view engine
 gem 'haml'
 gem 'haml-rails'
+
+# Use sidekiq for email job
+gem 'sidekiq'
