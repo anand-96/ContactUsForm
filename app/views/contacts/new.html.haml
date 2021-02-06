@@ -1,59 +1,62 @@
+= render 'shared/error_messages', contact: @contact
+
 %head
   %link{:href => "#{asset_pack_path("media/assets/images/icons/favicon.ico")}", :rel => "icon", :type => "image/png"}/
 
 %body
   .container-contact100
     .wrap-contact100
-      %form.contact100-form.validate-form
+      = form_with model: @contact, url: contacts_path, local: true, html: { class: "contact100-form validate-form" } do |f|
         %span.contact100-form-title
-          Send Us A Message
-        %label.label-input100{:for => "first-name"} Tell us your name *
-        .wrap-input100.rs1-wrap-input100.validate-input{"data-validate" => "Type first name"}
-          %input#first-name.input100{:name => "first-name", :placeholder => "First name", :type => "text"}/
+          = t('views.contact.title')
+        = f.label t('views.contact.label.name'), class: "label-input100", for: "first-name"
+        .wrap-input100.rs1-wrap-input100.validate-input{ "data-validate": t('views.contact.validate.first_name') }
+          = f.text_field :first_name, class: "input100", id: "first-name", placeholder: t('views.contact.placeholder.first_name')
           %span.focus-input100
-        .wrap-input100.rs2-wrap-input100.validate-input{"data-validate" => "Type last name"}
-          %input.input100{:name => "last-name", :placeholder => "Last name", :type => "text"}/
+        .wrap-input100.rs2-wrap-input100.validate-input{ "data-validate": t('views.contact.validate.last_name') }
+          = f.text_field :last_name, class: "input100", id: "last_name", placeholder: t('views.contact.placeholder.first_name')
           %span.focus-input100
-        %label.label-input100{:for => "email"} Enter your email *
-        .wrap-input100.validate-input{"data-validate" => "Valid email is required: ex@abc.xyz"}
-          %input#email.input100{:name => "email", :placeholder => "Eg. example@email.com", :type => "text"}/
+        = f.label t('views.contact.label.email'), class: "label-input100", for: "email"
+        .wrap-input100.validate-input{ "data-validate": t('views.contact.validate.email') }
+          = f.email_field :email, class: "input100", id: "email", placeholder: t('views.contact.placeholder.email')
           %span.focus-input100
-        %label.label-input100{:for => "phone"} Enter phone number
+        = f.label t('views.contact.label.phone'), class: "label-input100", for: "phone"
         .wrap-input100
-          %input#phone.input100{:name => "phone", :placeholder => "Eg. 1 800 000000", :type => "text"}/
+          = f.text_field :phone, class: "input100", id: "phone", placeholder: t('views.contact.placeholder.phone')
           %span.focus-input100
-        %label.label-input100{:for => "message"} Message *
-        .wrap-input100.validate-input{"data-validate" => "Message is required"}
-          %textarea#message.input100{:name => "message", :placeholder => "Write us a message"}
+        = f.label t('views.contact.label.message'), class: "label-input100", for: "message"
+        .wrap-input100.validate-input{ "data-validate": t('views.contact.validate.message') }
+          = f.text_area :message, class: "input100", id: "message", placeholder: t('views.contact.placeholder.message')
           %span.focus-input100
         .container-contact100-form-btn
-          %button.contact100-form-btn
-            Send Message
-      .contact100-more.flex-col-c-m{:style => "background-image: url(#{asset_pack_path("media/assets/images/bg-01.jpg")})"}
+          = f.submit t('views.contact.submit'), class: "contact100-form-btn"
+
+      .contact100-more.flex-col-c-m{ style: "background-image: url(#{asset_pack_path("media/assets/images/bg-01.jpg")})" }
         .flex-w.size1.p-b-47
           .txt1.p-r-25
             %span.lnr.lnr-map-marker
           .flex-col.size2
             %span.txt1.p-b-20
-              Address
+              = t('views.contact.address.title')
             %span.txt2
-              Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
+              = t('views.contact.address.text')
         .dis-flex.size1.p-b-47
           .txt1.p-r-25
             %span.lnr.lnr-phone-handset
           .flex-col.size2
             %span.txt1.p-b-20
-              Lets Talk
+              = t('views.contact.phone.title')
             %span.txt3
-              +1 800 1236879
+              = t('views.contact.phone.number')
         .dis-flex.size1.p-b-47
           .txt1.p-r-25
             %span.lnr.lnr-envelope
           .flex-col.size2
             %span.txt1.p-b-20
-              General Support
+              = t('views.contact.support.title')
             %span.txt3
-              contact@example.com
+              = t('views.contact.support.email')
+
   #dropDownSelect1
 
 = javascript_pack_tag 'main'
