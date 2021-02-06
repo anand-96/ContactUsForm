@@ -1,0 +1,49 @@
+hi:
+  title: "अजैकस"
+  controller:
+    contacts:
+      created: "संदेश सफलतापूर्वक भेजा जा चुका है"
+
+  mailer:
+    contact:
+      send_message:
+        subject: "अजैकस से संपर्क करना!"
+        body: "%{message}"
+
+  views:
+    contact:
+      title: "हमें एक संदेश भेजें"
+      label:
+        name: "हमें अपना नाम बताओ *"
+        email: "अपना ईमेल दर्ज करें *"
+        phone: "फोन नंबर दर्ज"
+        message: "संदेश *"
+      placeholder:
+        first_name: "पहला नाम"
+        last_name: "उपनाम"
+        email: "जैसे। example@email.com"
+        phone: "जैसे। +1 800 000000"
+        message: "हमें एक संदेश लिखें"
+      validate:
+        first_name: "पहला नाम टाइप करें"
+        last_name: "अंतिम नाम टाइप करें"
+        email: "वैध ईमेल आवश्यक है: ex@abc.xyz"
+        message: "संदेश आवश्यक है"
+      submit: "मेसेज भेजें"
+
+      address:
+        title: "पता"
+        text: "माडा सेंटर 8 वीं मंजिल, 379 हडसन सेंट, न्यूयॉर्क, एनवाई 10018 यूएस"
+      phone:
+        title: "चलो बात करते हैं"
+        number: +1 800 1236879
+      support:
+        title: "सामान्य समर्थन"
+        email: contact@example.com
+
+  errors:
+    messages:
+      not_saved:
+        one: "1 त्रुटि ने %{contact} सहेजने से प्रतिबंधित किया:"
+        other: "%{count} त्रुटि ने %{contact} सहेजने से प्रतिबंधित किया:"
+    internal_server: "आंतरिक सर्वर त्रुटि"

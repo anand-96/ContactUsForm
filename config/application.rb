@@ -13,6 +13,8 @@ module Ajackus
 
     config.active_job.queue_adapter = :sidekiq
 
+    config.i18n.available_locales = %i[hi en]
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

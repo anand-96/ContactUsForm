@@ -1,0 +1,4 @@
+%ul
+  - Constant::SUPPORTED_LANGUAGES.each do |symbol, language|
+    %li
+      = link_to t("languages.#{language}"), url_for(locale: symbol)
