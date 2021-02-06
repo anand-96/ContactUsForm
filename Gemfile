@@ -39,6 +39,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'shoulda-callback-matchers'
   gem 'rexml'
+  gem 'rails-controller-testing'
+  gem 'rspec-sidekiq'
 
   # Use for rspecs coverage
   gem 'simplecov'

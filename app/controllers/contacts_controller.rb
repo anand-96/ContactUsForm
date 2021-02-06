@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      flash[:success] = "Message sent successfully"
+      flash[:success] = t('controller.contacts.created')
       redirect_to new_contact_path
     else
       render :new

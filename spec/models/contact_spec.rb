@@ -24,4 +24,10 @@ RSpec.describe Contact, type: :model do
     it { is_expected.to validate_presence_of(:message) }
     it { is_expected.to validate_length_of(:message) }
   end
+
+  describe 'callbacks' do
+    it 'should call callback after create' do
+      expect(contact).to callback(:send_message).after(:create)
+    end
+  end
 end
