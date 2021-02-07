@@ -1,24 +1,18 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Ajackus RoR
+## Dependencies
+* Ruby version : 3.0.0
+* Rails Version : 6.1.1
+## Configuration
+```gem install bundler && bundle install```
+## Setup and Start the Applicaton
+### Database Setup
+```rake db:create && rake db:migrate```
+### Run the rails server and browse http://localhost:3000
+```rails s```
+### Start sidekiq
+```sidekiq```
+## Test Environment Setup
+### Test Database Setup
+```RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:migrate```
+### Run the Test Suit
+```rspec```
